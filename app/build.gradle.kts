@@ -50,6 +50,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation("com.blankj:utilcodex:1.31.1")
+
     implementation("com.guolindev.permissionx:permissionx:1.8.1")
 
     // https://github.com/journeyapps/zxing-android-embedded

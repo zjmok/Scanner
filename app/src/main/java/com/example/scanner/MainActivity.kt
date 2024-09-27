@@ -6,7 +6,6 @@ import android.content.ClipboardManager
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
@@ -27,9 +26,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.blankj.utilcode.util.UriUtils
 import com.example.scanner.databinding.ActivityMainBinding
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.BinaryBitmap
@@ -51,7 +50,6 @@ import java.io.InputStream
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-
 
 @SuppressLint("SetTextI18n")
 class MainActivity : AppCompatActivity() {
@@ -144,8 +142,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.iv.setOnLongClickListener {
-            val bitmap = (binding.iv.drawable as BitmapDrawable).bitmap
-            saveBitmapToPublicGallery(bitmap, this)
+            AlertDialog.Builder(this)
+                .setTitle("确认提示")
+                .setMessage("是否需要保存图片")
+                .setPositiveButton("确定") { _, _ ->
+                    val bitmap = (binding.iv.drawable as BitmapDrawable).bitmap
+                    saveBitmapToPublicGallery(bitmap, this)
+                }
+                .setNegativeButton("取消") { _, _ -> }
+                .show()
             true
         }
 
@@ -171,11 +176,7 @@ class MainActivity : AppCompatActivity() {
                 // 如果需要，可以调用 isEnabled 来控制回调是否有效
                 // 如果不想处理返回事件，可以调用 remove() 方法
                 onMultiClick({
-                    Toast.makeText(
-                        this@MainActivity,
-                        "快速再按 $it 次 退出程序",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this@MainActivity, "快速再按 $it 次 退出程序", Toast.LENGTH_SHORT).show()
                 }, {
                     finish()
                 })
@@ -218,8 +219,7 @@ class MainActivity : AppCompatActivity() {
                 val intArray = IntArray(bitmap.width * bitmap.height)
                 bitmap.getPixels(intArray, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
 
-                val source: LuminanceSource =
-                    RGBLuminanceSource(bitmap.width, bitmap.height, intArray)
+                val source: LuminanceSource = RGBLuminanceSource(bitmap.width, bitmap.height, intArray)
                 val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
 
                 val reader = MultiFormatReader()
@@ -261,8 +261,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveBitmapToJpeg(bitmap: Bitmap, context: Context) {
-        val publicDirectory =
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+        val publicDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
         val dir = File(publicDirectory, packageName)
         if (dir.exists().not() && dir.mkdirs().not()) {
             Log.d("TAG", "saveBitmapToJpeg: mkdirs failed")
@@ -275,9 +274,8 @@ class MainActivity : AppCompatActivity() {
         try {
             FileOutputStream(filePath).use { outputStream ->
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-                Log.d("TAG", "saveBitmapToJpeg: ${filePath.absolutePath}")
-                Toast.makeText(context, "图片已保存: ${filePath.absolutePath}", Toast.LENGTH_LONG)
-                    .show()
+                Log.d("TAG", "saveBitmapToJpeg: filePath = ${filePath.absolutePath}")
+                Toast.makeText(context, "图片已保存: ${filePath.absolutePath}", Toast.LENGTH_LONG).show()
             }
         } catch (e: IOException) {
             e.printStackTrace()
@@ -293,20 +291,16 @@ class MainActivity : AppCompatActivity() {
                 val dateString = dateFormat.format(Date())
                 put(MediaStore.Images.Media.DISPLAY_NAME, "saved_qrcode_image_${dateString}.jpg")
                 put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
-                put(
-                    MediaStore.Images.Media.RELATIVE_PATH,
-                    Environment.DIRECTORY_PICTURES + "/${packageName}"
-                ) // 存储目录
+                put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + "/${packageName}") // 存储目录
             }
-            context.contentResolver.insert(
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                contentValues
-            )?.let { uri ->
+            context.contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)?.let { uri ->
+                val file = UriUtils.uri2File(uri)
                 context.contentResolver.openOutputStream(uri).use { outputStream ->
                     if (outputStream != null) {
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-                        Log.d("TAG", "saveBitmapToPublicGallery: $uri")
-                        Toast.makeText(context, "图片已保存: $uri", Toast.LENGTH_LONG).show()
+                        Log.d("TAG", "saveBitmapToPublicGallery: uri = $uri")
+                        Log.d("TAG", "saveBitmapToPublicGallery: filePath = ${file.absolutePath}")
+                        Toast.makeText(context, "图片已保存: ${file.absolutePath}", Toast.LENGTH_LONG).show()
                     }
                 }
             } ?: {
@@ -322,11 +316,7 @@ class MainActivity : AppCompatActivity() {
                         // 有权限后 写入文件
                         saveBitmapToJpeg(bitmap, context)
                     } else {
-                        Toast.makeText(
-                            this,
-                            "These permissions are denied: $deniedList",
-                            Toast.LENGTH_LONG
-                        ).show()
+                        Toast.makeText(this, "These permissions are denied: $deniedList", Toast.LENGTH_LONG).show()
                     }
                 }
         }
