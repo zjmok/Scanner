@@ -26,6 +26,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.createBitmap
+import androidx.core.graphics.set
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.blankj.utilcode.util.UriUtils
@@ -248,16 +250,14 @@ class MainActivity : AppCompatActivity() {
             val bitMatrix = qrCodeWriter.encode(content, BarcodeFormat.QR_CODE, 300, 300)
             val width = bitMatrix.width
             val height = bitMatrix.height
-            val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+            val bitmap = createBitmap(width, height)
             for (x in 0 until width) {
                 for (y in 0 until height) {
-                    bitmap.setPixel(
-                        x, y, if (bitMatrix[x, y]) {
-                            0xFF000000
-                        } else {
-                            0xFFFFFFFF
-                        }.toInt()
-                    )
+                    bitmap[x, y] = if (bitMatrix[x, y]) {
+                        0xFF000000
+                    } else {
+                        0xFFFFFFFF
+                    }.toInt()
                 }
             }
             result.invoke(bitmap)
