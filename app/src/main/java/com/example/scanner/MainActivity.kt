@@ -139,9 +139,13 @@ class MainActivity : AppCompatActivity() {
             }
             generateQRCode(binding.et.text.toString()) {
                 binding.iv.setImageBitmap(it)
+                binding.iv.tag = true
             }
         }
         binding.iv.setOnLongClickListener {
+            if (binding.iv.tag != true || binding.iv.drawable == null) {
+                return@setOnLongClickListener true
+            }
             AlertDialog.Builder(this)
                 .setTitle("确认提示")
                 .setMessage("是否需要保存图片")
@@ -163,6 +167,7 @@ class MainActivity : AppCompatActivity() {
                     binding.tv.text = ""
                     binding.et.setText("")
                     binding.iv.setImageBitmap(null)
+                    binding.iv.tag = null
                 }
                 .setNegativeButton("取消") { _, _ -> }
                 .show()
@@ -191,6 +196,7 @@ class MainActivity : AppCompatActivity() {
             val bitmap = BitmapFactory.decodeStream(inputStream)
 
             binding.iv.setImageBitmap(bitmap)
+            binding.iv.tag = true
 
             val intArray = IntArray(bitmap.width * bitmap.height)
             bitmap.getPixels(intArray, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
