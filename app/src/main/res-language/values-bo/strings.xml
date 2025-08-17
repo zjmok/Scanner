@@ -1,0 +1,32 @@
+<!-- 藏语 (bo) -->
+<resources>
+    <string name="app_name">སྣང་བརྙན་ཞིབ་བཤེར་ཆས།</string>
+    <string name="code_type">ཨང་རྟགས་རིགས།</string>
+    <string name="clear">སྦ清的</string>
+    <string name="scan_prompt">QR ཨང་རྟགས་ཡང་ན་བarcode་ཞིབ་བཤེར་བྱ་རོགས།</string>
+    <string name="scan">ཞིབ་བཤེར།</string>
+    <string name="select_image">པར་རིས་འདེམས།</string>
+    <string name="copy_result">ཞིབ་བཤེར་འབྲས་བུ་འདྲ་བཤུས།</string>
+    <string name="edit_box">བཟོ་བཅོས་སྒྲོམ།</string>
+    <string name="generate_qr">ཡི་གེ་ནས་QR ཨང་རྟགས་སྐྲུན།</string>
+    <string name="copy_text">བཟོ་བཅོས་སྒྲོམ་ནང་དོན་འདྲ་བཤུས།</string>
+
+    <string name="cancel_scan">ཞིབ་བཤེར་འགོག་པ།</string>
+    <string name="cancel_image_selection">པར་རིས་འདེམས་པ་འགོག་པ།</string>
+    <string name="parse_error">བཀྲོལ་ཆོད་ནོར་འཁྲུལ།</string>
+    <string name="error_occurred">ནོར་འཁྲུལ་བྱུང་།</string>
+    <string name="no_content">ད་ལྟ་ནང་དོན་མེད།</string>
+    <string name="copy_success">འདྲ་བཤུས་ལེགས་གྲུབ།</string>
+    <string name="confirmation_prompt">ངོས་ལེན་གསལ་བསྒྲགས།</string>
+    <string name="save_image_prompt">པར་རིས་ཉར་བ་གནང་དགོས་སམ།</string>
+    <string name="confirm">ངོས་ལེན།</string>
+    <string name="cancel">འགོག་པ།</string>
+    <string name="clear_content_warning">ངོས་འཛིན་ནང་དོན་སྦ清的་བྱེད་དམ། འདིའི་བྱ་བ་ཕྱིར་འཐེན་བྱེད་མི་ཐུབ།</string>
+    <string name="error">ནོར་འཁྲུལ།</string>
+    <string name="code_not_detected">ཨང་རྟགས་ཡང་ན་QR ཨང་རྟགས་ངོས་འཛིན་མ་བྱུང་།</string>
+    <string name="directory_creation_failed">སྣོད་ཐོ་སྐྲུན་ལས་དོན་མ་ལེགས།</string>
+    <string name="image_saved">པར་རིས་ཉར་ཟིན།</string>
+    <string name="save_failed">ཉར་བ་མ་ལེགས།</string>
+
+    <string name="press_to_exit">འདི་ལ་%1$d ཡང་གནོན་ན་ལྟད་མོ་སྒོ་བསྡུས་པ།</string>
+</resources>

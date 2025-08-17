@@ -1,0 +1,32 @@
+<!-- 西班牙语 (es) -->
+<resources>
+    <string name="app_name">Escáner</string>
+    <string name="code_type">Tipo de código</string>
+    <string name="clear">Limpiar</string>
+    <string name="scan_prompt">Escanee un código QR o de barras</string>
+    <string name="scan">Escanear</string>
+    <string name="select_image">Seleccionar imagen</string>
+    <string name="copy_result">Copiar resultado</string>
+    <string name="edit_box">Campo de edición</string>
+    <string name="generate_qr">Generar QR desde texto</string>
+    <string name="copy_text">Copiar texto</string>
+
+    <string name="cancel_scan">Cancelar escaneo</string>
+    <string name="cancel_image_selection">Cancelar selección</string>
+    <string name="parse_error">Error de análisis</string>
+    <string name="error_occurred">Ocurrió un error</string>
+    <string name="no_content">Sin contenido</string>
+    <string name="copy_success">Copiado correctamente</string>
+    <string name="confirmation_prompt">Confirmación</string>
+    <string name="save_image_prompt">¿Guardar imagen?</string>
+    <string name="confirm">Confirmar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="clear_content_warning">¿Borrar contenido reconocido? Esta acción no se puede deshacer.</string>
+    <string name="error">Error</string>
+    <string name="code_not_detected">No se detectó código QR o de barras</string>
+    <string name="directory_creation_failed">Error al crear directorio</string>
+    <string name="image_saved">Imagen guardada</string>
+    <string name="save_failed">Error al guardar</string>
+
+    <string name="press_to_exit">Presione %1$d veces más para salir</string>
+</resources>

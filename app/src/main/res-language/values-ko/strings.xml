@@ -1,0 +1,32 @@
+<!-- 韩语 (ko) -->
+<resources>
+    <string name="app_name">스캐너</string>
+    <string name="code_type">코드 유형</string>
+    <string name="clear">지우기</string>
+    <string name="scan_prompt">QR 코드 또는 바코드를 스캔하세요</string>
+    <string name="scan">스캔</string>
+    <string name="select_image">이미지 선택</string>
+    <string name="copy_result">스캔 결과 복사</string>
+    <string name="edit_box">입력창</string>
+    <string name="generate_qr">텍스트로 QR 코드 생성</string>
+    <string name="copy_text">편집 상자 내용 복사</string>
+
+    <string name="cancel_scan">스캔 취소</string>
+    <string name="cancel_image_selection">이미지 선택 취소</string>
+    <string name="parse_error">파싱 오류</string>
+    <string name="error_occurred">오류 발생</string>
+    <string name="no_content">내용 없음</string>
+    <string name="copy_success">복사 성공</string>
+    <string name="confirmation_prompt">확인 메시지</string>
+    <string name="save_image_prompt">이미지를 저장하시겠습니까?</string>
+    <string name="confirm">확인</string>
+    <string name="cancel">취소</string>
+    <string name="clear_content_warning">인식 내용을 지우시겠습니까? 이 작업은 취소할 수 없습니다.</string>
+    <string name="error">오류</string>
+    <string name="code_not_detected">바코드 또는 QR 코드가 인식되지 않았습니다</string>
+    <string name="directory_creation_failed">디렉토리 생성 실패</string>
+    <string name="image_saved">이미지 저장됨</string>
+    <string name="save_failed">저장 실패</string>
+
+    <string name="press_to_exit">%1$d번 더 누르면 종료됩니다</string>
+</resources>

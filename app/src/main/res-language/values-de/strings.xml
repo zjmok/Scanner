@@ -1,0 +1,32 @@
+<!-- 德语 (de) -->
+<resources>
+    <string name="app_name">Scanner</string>
+    <string name="code_type">Code-Typ</string>
+    <string name="clear">Löschen</string>
+    <string name="scan_prompt">Scannen Sie einen QR- oder Barcode</string>
+    <string name="scan">Scannen</string>
+    <string name="select_image">Bild auswählen</string>
+    <string name="copy_result">Ergebnis kopieren</string>
+    <string name="edit_box">Eingabefeld</string>
+    <string name="generate_qr">QR-Code aus Text generieren</string>
+    <string name="copy_text">Text kopieren</string>
+
+    <string name="cancel_scan">Scan abbrechen</string>
+    <string name="cancel_image_selection">Auswahl abbrechen</string>
+    <string name="parse_error">Analysefehler</string>
+    <string name="error_occurred">Fehler aufgetreten</string>
+    <string name="no_content">Kein Inhalt</string>
+    <string name="copy_success">Erfolgreich kopiert</string>
+    <string name="confirmation_prompt">Bestätigung</string>
+    <string name="save_image_prompt">Bild speichern?</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="clear_content_warning">Erkannten Inhalt löschen? Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="error">Fehler</string>
+    <string name="code_not_detected">Kein Barcode oder QR-Code erkannt</string>
+    <string name="directory_creation_failed">Verzeichnis konnte nicht erstellt werden</string>
+    <string name="image_saved">Bild gespeichert</string>
+    <string name="save_failed">Speichern fehlgeschlagen</string>
+
+    <string name="press_to_exit">Noch %1$d Mal drücken zum Beenden</string>
+</resources>

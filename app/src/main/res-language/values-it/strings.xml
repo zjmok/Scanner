@@ -1,0 +1,32 @@
+<!-- 意大利语 (it) -->
+<resources>
+    <string name="app_name">Scanner</string>
+    <string name="code_type">Tipo di codice</string>
+    <string name="clear">Cancella</string>
+    <string name="scan_prompt">Scansiona un codice QR o a barre</string>
+    <string name="scan">Scansiona</string>
+    <string name="select_image">Seleziona immagine</string>
+    <string name="copy_result">Copia risultato</string>
+    <string name="edit_box">Casella di testo</string>
+    <string name="generate_qr">Genera QR da testo</string>
+    <string name="copy_text">Copia testo</string>
+
+    <string name="cancel_scan">Annulla scansione</string>
+    <string name="cancel_image_selection">Annulla selezione</string>
+    <string name="parse_error">Errore di analisi</string>
+    <string name="error_occurred">Si è verificato un errore</string>
+    <string name="no_content">Nessun contenuto</string>
+    <string name="copy_success">Copiato con successo</string>
+    <string name="confirmation_prompt">Conferma</string>
+    <string name="save_image_prompt">Salvare l\'immagine?</string>
+    <string name="confirm">Conferma</string>
+    <string name="cancel">Annulla</string>
+    <string name="clear_content_warning">Cancellare il contenuto? Questa azione è irreversibile.</string>
+    <string name="error">Errore</string>
+    <string name="code_not_detected">Nessun codice QR o a barre rilevato</string>
+    <string name="directory_creation_failed">Creazione cartella fallita</string>
+    <string name="image_saved">Immagine salvata</string>
+    <string name="save_failed">Salvataggio fallito</string>
+
+    <string name="press_to_exit">Premi altri %1$d volte per uscire</string>
+</resources>

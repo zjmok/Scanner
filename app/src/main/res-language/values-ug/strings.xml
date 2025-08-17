@@ -1,0 +1,32 @@
+<!-- 维吾尔语 (ug) -->
+<resources>
+    <string name="app_name">سىكانىر</string>
+    <string name="code_type">كود تىپى</string>
+    <string name="clear">تازىلاش</string>
+    <string name="scan_prompt">QR كود ياكى باركودنى سىكان قىلىڭ</string>
+    <string name="scan">سىكان</string>
+    <string name="select_image">رەسىم تاللاش</string>
+    <string name="copy_result">سىكان نەتىجىسىنى كۆچۈرۈش</string>
+    <string name="edit_box">تەھرىر رامكى</string>
+    <string name="generate_qr">تېكىستىدىن QR كود ھاسىل قىلىش</string>
+    <string name="copy_text">تەھرىر رامكى مەزمۇنىنى كۆچۈرۈش</string>
+
+    <string name="cancel_scan">سىكاننى بىكار قىلىش</string>
+    <string name="cancel_image_selection">رەسىم تاللاشنى بىكار قىلىش</string>
+    <string name="parse_error">تەھلىل خاتالىقى</string>
+    <string name="error_occurred">خاتالىق كۆرۈلدى</string>
+    <string name="no_content">مەزمۇن يوق</string>
+    <string name="copy_success">كۆچۈرۈش مۇۋەپپەقىيەتلىك بولدى</string>
+    <string name="confirmation_prompt">جەزملەشتۈرۈش ئۇقتۇرۇشى</string>
+    <string name="save_image_prompt">رەسىمنى ساقلامسىز؟</string>
+    <string name="confirm">جەزملەشتۈرۈش</string>
+    <string name="cancel">بىكار قىلىش</string>
+    <string name="clear_content_warning">تونۇلغان مەزمۇننى تازىلامسىز؟ بۇ مەشغۇلاتنى قايتۇرۇپ بولمايدۇ.</string>
+    <string name="error">خاتالىق</string>
+    <string name="code_not_detected">باركود ياكى QR كود تونۇلمىدى</string>
+    <string name="directory_creation_failed">مۇندەرىجە قۇرالمىدى</string>
+    <string name="image_saved">رەسىم ساقلاندى</string>
+    <string name="save_failed">ساقلاش مەغلۇپ بولدى</string>
+
+    <string name="press_to_exit">تەكرار %1$d قېتىم بېسىپ چېكىنىڭ</string>
+</resources>

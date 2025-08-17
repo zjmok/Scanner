@@ -1,0 +1,32 @@
+<!-- 彝语 (ii) -->
+<resources>
+    <string name="app_name">ꌧꅍꀧꌠ</string>
+    <string name="code_type">ꎴꀋ ꀋꐚ</string>
+    <string name="clear">ꊐꈭ</string>
+    <string name="scan_prompt">QR ꎴꀋ ꄷꌠ ꃅꄷꌠ ꀧꌠ ꌧꅍ</string>
+    <string name="scan">ꌧꅍ</string>
+    <string name="select_image">ꏓꂱ ꑌꈐ</string>
+    <string name="copy_result">ꌧꅍ ꀋꎴ ꌐꀋ</string>
+    <string name="edit_box">ꏓꄉꌠ ꃮꏂ</string>
+    <string name="generate_qr">ꏓꄉꌠ ꀋꎴ QR ꎴꀋ ꑞꌠ</string>
+    <string name="copy_text">ꏓꄉꌠ ꀋꎴ ꌐꀋ</string>
+
+    <string name="cancel_scan">ꌧꅍ ꀧꌠ ꑟꀋ</string>
+    <string name="cancel_image_selection">ꏓꂱ ꑌꈐ ꑟꀋ</string>
+    <string name="parse_error">ꀧꌠ ꄡꃅ</string>
+    <string name="error_occurred">ꄡꃅ ꀋꐚ</string>
+    <string name="no_content">ꀋꎴ ꀋꐥ</string>
+    <string name="copy_success">ꌐꀋ ꌧꅍ</string>
+    <string name="confirmation_prompt">ꉆꇁ ꄀꐨ</string>
+    <string name="save_image_prompt">ꏓꂱ ꉆꇁ ꉆꐨ?</string>
+    <string name="confirm">ꉆꇁ</string>
+    <string name="cancel">ꑟꀋ</string>
+    <string name="clear_content_warning">ꀋꎴ ꊐꈭ? ꄀꐨ ꄡꑌꇬ ꑟꀋꌠ.</string>
+    <string name="error">ꄡꃅ</string>
+    <string name="code_not_detected">ꎴꀋ ꄷꌠ QR ꎴꀋ ꀋꎴ</string>
+    <string name="directory_creation_failed">ꃮꏂ ꄡꃅ</string>
+    <string name="image_saved">ꏓꂱ ꉆꇁ</string>
+    <string name="save_failed">ꉆꇁ ꄡꃅ</string>
+
+    <string name="press_to_exit">ꉆꇁ %1$d ꀕ ꌠ ꄀꐨ</string>
+</resources>

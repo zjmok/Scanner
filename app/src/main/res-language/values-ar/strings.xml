@@ -1,0 +1,32 @@
+<!-- 阿拉伯语 (ar) -->
+<resources>
+    <string name="app_name">ماسح</string>
+    <string name="code_type">نوع الكود</string>
+    <string name="clear">مسح</string>
+    <string name="scan_prompt">امسح رمز QR أو الباركود</string>
+    <string name="scan">مسح</string>
+    <string name="select_image">اختر صورة</string>
+    <string name="copy_result">نسخ النتيجة</string>
+    <string name="edit_box">مربع التحرير</string>
+    <string name="generate_qr">إنشاء QR من النص</string>
+    <string name="copy_text">نسخ النص</string>
+
+    <string name="cancel_scan">إلغاء المسح</string>
+    <string name="cancel_image_selection">إلغاء الاختيار</string>
+    <string name="parse_error">خطأ في التحليل</string>
+    <string name="error_occurred">حدث خطأ</string>
+    <string name="no_content">لا يوجد محتوى</string>
+    <string name="copy_success">تم النسخ بنجاح</string>
+    <string name="confirmation_prompt">تأكيد</string>
+    <string name="save_image_prompt">هل تريد حفظ الصورة؟</string>
+    <string name="confirm">تأكيد</string>
+    <string name="cancel">إلغاء</string>
+    <string name="clear_content_warning">مسح المحتوى المعروف؟ لا يمكن التراجع عن هذا الإجراء.</string>
+    <string name="error">خطأ</string>
+    <string name="code_not_detected">لم يتم العثور على رمز QR أو باركود</string>
+    <string name="directory_creation_failed">فشل إنشاء المجلد</string>
+    <string name="image_saved">تم حفظ الصورة</string>
+    <string name="save_failed">فشل الحفظ</string>
+
+    <string name="press_to_exit">اضغط %1$d مرة أخرى للخروج</string>
+</resources>

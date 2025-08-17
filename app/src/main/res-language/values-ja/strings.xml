@@ -1,0 +1,32 @@
+<!-- 日语 (ja) -->
+<resources>
+    <string name="app_name">スキャナー</string>
+    <string name="code_type">コードタイプ</string>
+    <string name="clear">クリア</string>
+    <string name="scan_prompt">QRコードまたはバーコードをスキャンしてください</string>
+    <string name="scan">スキャン</string>
+    <string name="select_image">画像を選択</string>
+    <string name="copy_result">スキャン結果をコピー</string>
+    <string name="edit_box">編集ボックス</string>
+    <string name="generate_qr">テキストからQRコードを生成</string>
+    <string name="copy_text">編集ボックスの内容をコピー</string>
+
+    <string name="cancel_scan">スキャンキャンセル</string>
+    <string name="cancel_image_selection">画像選択キャンセル</string>
+    <string name="parse_error">解析エラー</string>
+    <string name="error_occurred">エラーが発生しました</string>
+    <string name="no_content">内容がありません</string>
+    <string name="copy_success">コピー成功</string>
+    <string name="confirmation_prompt">確認メッセージ</string>
+    <string name="save_image_prompt">画像を保存しますか？</string>
+    <string name="confirm">確認</string>
+    <string name="cancel">キャンセル</string>
+    <string name="clear_content_warning">認識内容を消去しますか？この操作は元に戻せません。</string>
+    <string name="error">エラー</string>
+    <string name="code_not_detected">バーコードまたはQRコードが検出されませんでした</string>
+    <string name="directory_creation_failed">ディレクトリ作成失敗</string>
+    <string name="image_saved">画像を保存しました</string>
+    <string name="save_failed">保存失敗</string>
+
+    <string name="press_to_exit">あと%1$d回で終了します</string>
+</resources>

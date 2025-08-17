@@ -1,0 +1,32 @@
+<!-- 波斯语 (fa) -->
+<resources>
+    <string name="app_name">اسکنر</string>
+    <string name="code_type">نوع کد</string>
+    <string name="clear">پاک‌کردن</string>
+    <string name="scan_prompt">لطفاً کد QR یا بارکد را اسکن کنید</string>
+    <string name="scan">اسکن</string>
+    <string name="select_image">انتخاب تصویر</string>
+    <string name="copy_result">کپی نتیجه</string>
+    <string name="edit_box">جعبه ویرایش</string>
+    <string name="generate_qr">تولید QR از متن</string>
+    <string name="copy_text">کپی محتوای جعبه</string>
+
+    <string name="cancel_scan">لغو اسکن</string>
+    <string name="cancel_image_selection">لغو انتخاب تصویر</string>
+    <string name="parse_error">خطای تجزیه</string>
+    <string name="error_occurred">خطا رخ داد</string>
+    <string name="no_content">محتوایی وجود ندارد</string>
+    <string name="copy_success">کپی موفق</string>
+    <string name="confirmation_prompt">تأییدیه</string>
+    <string name="save_image_prompt">آیا می‌خواهید تصویر را ذخیره کنید؟</string>
+    <string name="confirm">تأیید</string>
+    <string name="cancel">لغو</string>
+    <string name="clear_content_warning">آیا محتوای شناسایی شده پاک شود؟ این عمل غیرقابل بازگشت است.</string>
+    <string name="error">خطا</string>
+    <string name="code_not_detected">کد QR یا بارکد شناسایی نشد</string>
+    <string name="directory_creation_failed">خطا در ایجاد پوشه</string>
+    <string name="image_saved">تصویر ذخیره شد</string>
+    <string name="save_failed">خطا در ذخیره‌سازی</string>
+
+    <string name="press_to_exit">برای خروج %1$d بار دیگر فشار دهید</string>
+</resources>

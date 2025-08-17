@@ -1,0 +1,32 @@
+<!-- 法语 (fr) -->
+<resources>
+    <string name="app_name">Scanner</string>
+    <string name="code_type">Type de code</string>
+    <string name="clear">Effacer</string>
+    <string name="scan_prompt">Scannez un code QR ou un code-barres</string>
+    <string name="scan">Scanner</string>
+    <string name="select_image">Sélectionner une image</string>
+    <string name="copy_result">Copier le résultat</string>
+    <string name="edit_box">Zone de texte</string>
+    <string name="generate_qr">Générer un QR code</string>
+    <string name="copy_text">Copier le texte</string>
+
+    <string name="cancel_scan">Annuler le scan</string>
+    <string name="cancel_image_selection">Annuler la sélection</string>
+    <string name="parse_error">Erreur d\'analyse</string>
+    <string name="error_occurred">Une erreur est survenue</string>
+    <string name="no_content">Aucun contenu</string>
+    <string name="copy_success">Copié avec succès</string>
+    <string name="confirmation_prompt">Confirmation</string>
+    <string name="save_image_prompt">Enregistrer l\'image ?</string>
+    <string name="confirm">Confirmer</string>
+    <string name="cancel">Annuler</string>
+    <string name="clear_content_warning">Effacer le contenu ? Cette action est irréversible.</string>
+    <string name="error">Erreur</string>
+    <string name="code_not_detected">Aucun code-barres ou QR code détecté</string>
+    <string name="directory_creation_failed">Échec de création du dossier</string>
+    <string name="image_saved">Image enregistrée</string>
+    <string name="save_failed">Échec de l\'enregistrement</string>
+
+    <string name="press_to_exit">Appuyez encore %1$d fois pour quitter</string>
+</resources>

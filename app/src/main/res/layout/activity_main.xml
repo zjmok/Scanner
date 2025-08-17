@@ -5,28 +5,37 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:ignore="HardcodedText">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tv_format"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:gravity="top"
-        android:hint="\? 码:"
+        android:hint="@string/code_type"
         android:text=""
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_colon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint=" : "
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@id/tv_format"
+        app:layout_constraintStart_toEndOf="@id/tv_format"
+        app:layout_constraintTop_toTopOf="@id/tv_format"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btn_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="清空"
+        android:text="@string/clear"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_format"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -36,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:gravity="top"
-        android:hint="请扫描二维码或条形码"
+        android:hint="@string/scan_prompt"
         android:maxLines="10"
         android:text=""
         android:textSize="18sp"
@@ -49,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="16dp"
-        android:text="扫码"
+        android:text="@string/scan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_pick"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -62,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:text="选图"
+        android:text="@string/select_image"
         app:layout_constraintBaseline_toBaselineOf="@id/btn_scan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_scan" />
@@ -72,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="复制扫描内容"
+        android:text="@string/copy_result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_pick" />
@@ -85,43 +94,58 @@
         android:autofillHints=""
         android:background="@drawable/border_edittext"
         android:gravity="top"
-        android:hint="编辑框"
+        android:hint="@string/edit_box"
         android:inputType="none"
         android:maxLines="10"
         android:padding="10dp"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/btn_copy" />
 
-    <Button
-        android:id="@+id/btn_copy_generate"
+    <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="16dp"
-        android:text="编辑框内容生成二维码"
-        app:layout_constraintEnd_toStartOf="@id/btn_copy_editor"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et" />
-
-    <Button
-        android:id="@+id/btn_copy_editor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="复制编辑框内容"
-        app:layout_constraintBaseline_toBaselineOf="@id/btn_copy_generate"
+        android:gravity="center"
+        android:layout_marginVertical="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_copy_generate" />
+        app:layout_constraintTop_toBottomOf="@id/et"
+        >
+
+        <Button
+            android:id="@+id/btn_copy_generate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:lines="2"
+            android:ellipsize="none"
+            android:text="@string/generate_qr" />
+
+        <Button
+            android:id="@+id/btn_copy_editor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:lines="2"
+            android:ellipsize="none"
+            android:layout_marginStart="10dp"
+            android:text="@string/copy_text"
+            />
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/iv"
-        android:layout_width="320dp"
-        android:layout_height="320dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_copy_editor"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintTop_toBottomOf="@id/ll"
+        app:layout_constraintVertical_bias="0"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

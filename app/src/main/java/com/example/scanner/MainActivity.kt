@@ -53,16 +53,16 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-@SuppressLint("SetTextI18n")
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     private val barcodeLauncher = registerForActivityResult(ScanContract()) { result ->
         if (result.contents == null) {
-            Toast.makeText(this, "取消扫码", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.cancel_scan), Toast.LENGTH_SHORT).show()
         } else {
-            binding.tvFormat.text = "${result.formatName} 码:"
+            binding.tvFormat.text = result.formatName
+            binding.tvColon.text = " : "
             binding.tv.text = result.contents
             binding.et.setText(result.contents)
         }
@@ -71,22 +71,22 @@ class MainActivity : AppCompatActivity() {
     private val pickLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_CANCELED) {
-                Toast.makeText(this, "取消选图", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.cancel_image_selection), Toast.LENGTH_SHORT).show()
             } else if (result.resultCode == RESULT_OK) {
                 val intent = result.data
                 intent?.data?.let { uri ->
-//                    decodeQRCode(uri) {
-                    decodeQRCode(uri) {
-                        if (it == null) {
-                            Toast.makeText(this, "解析出错", Toast.LENGTH_SHORT).show()
-                            return@decodeQRCode
+                    decodeCode(uri) {
+                        if (it != null) {
+                            binding.tvFormat.text = "${it.barcodeFormat}"
+                            binding.tvColon.text = " : "
+                            binding.tv.text = it.text
+                            binding.et.setText(it.text)
+                        } else {
+                            Toast.makeText(this, getString(R.string.parse_error), Toast.LENGTH_SHORT).show()
                         }
-                        binding.tvFormat.text = "${it.barcodeFormat} 码:"
-                        binding.tv.text = it.text
-                        binding.et.setText(it.text)
                     }
                 } ?: {
-                    Toast.makeText(this, "出现错误", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.error_occurred), Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -116,27 +116,27 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnCopy.setOnClickListener {
             if (binding.tv.text.isNullOrBlank()) {
-                Toast.makeText(this, "暂无内容", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.no_content), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             clipboardManager.setPrimaryClip(ClipData.newPlainText(packageName, binding.tv.text))
-            Toast.makeText(this, "复制成功:\n${binding.tv.text}", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "${getString(R.string.copy_success)}:\n${binding.tv.text}", Toast.LENGTH_LONG).show()
         }
 
         binding.btnCopyEditor.setOnClickListener {
             if (binding.et.text.isNullOrBlank()) {
-                Toast.makeText(this, "暂无内容", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.no_content), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             clipboardManager.setPrimaryClip(ClipData.newPlainText(packageName, binding.et.text))
-            Toast.makeText(this, "复制成功:\n${binding.et.text}", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "${getString(R.string.copy_success)}:\n${binding.et.text}", Toast.LENGTH_LONG).show()
         }
 
         binding.btnCopyGenerate.setOnClickListener {
             if (binding.et.text.isNullOrBlank()) {
-                Toast.makeText(this, "暂无内容", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.no_content), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             generateQRCode(binding.et.text.toString()) {
@@ -149,29 +149,30 @@ class MainActivity : AppCompatActivity() {
                 return@setOnLongClickListener true
             }
             AlertDialog.Builder(this)
-                .setTitle("确认提示")
-                .setMessage("是否需要保存图片")
-                .setPositiveButton("确定") { _, _ ->
+                .setTitle(getString(R.string.confirmation_prompt))
+                .setMessage(getString(R.string.save_image_prompt))
+                .setPositiveButton(getString(R.string.confirm)) { _, _ ->
                     val bitmap = (binding.iv.drawable as BitmapDrawable).bitmap
                     saveBitmapToPublicGallery(bitmap, this)
                 }
-                .setNegativeButton("取消") { _, _ -> }
+                .setNegativeButton(getString(R.string.cancel)) { _, _ -> }
                 .show()
             true
         }
 
         binding.btnClear.setOnClickListener {
             AlertDialog.Builder(this)
-                .setTitle("确认提示")
-                .setMessage("是否清空识别内容？此操作不可逆。")
-                .setPositiveButton("确定") { _, _ ->
+                .setTitle(getString(R.string.confirmation_prompt))
+                .setMessage(getString(R.string.clear_content_warning))
+                .setPositiveButton(getString(R.string.confirm)) { _, _ ->
                     binding.tvFormat.text = ""
+                    binding.tvColon.text = ""
                     binding.tv.text = ""
                     binding.et.setText("")
                     binding.iv.setImageBitmap(null)
                     binding.iv.tag = null
                 }
-                .setNegativeButton("取消") { _, _ -> }
+                .setNegativeButton(getString(R.string.cancel)) { _, _ -> }
                 .show()
         }
 
@@ -183,7 +184,7 @@ class MainActivity : AppCompatActivity() {
                 // 如果需要，可以调用 isEnabled 来控制回调是否有效
                 // 如果不想处理返回事件，可以调用 remove() 方法
                 onMultiClick({
-                    Toast.makeText(this@MainActivity, "快速再按 $it 次 退出程序", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, getString(R.string.press_to_exit, it), Toast.LENGTH_SHORT).show()
                 }, {
                     finish()
                 })
@@ -191,7 +192,8 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun decodeQRCode(imageUri: Uri, resultListener: (Result?) -> Unit) {
+    @SuppressLint("SetTextI18n")
+    private fun decodeCode(imageUri: Uri, resultListener: (Result?) -> Unit) {
         Log.d("MainActivity", "decodeQRCode: ${imageUri.path}")
         try {
             val inputStream = contentResolver.openInputStream(imageUri)
@@ -207,13 +209,24 @@ class MainActivity : AppCompatActivity() {
             val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
 
             val reader = MultiFormatReader()
-//            val reader = QRCodeReader()
+
             val result = reader.decode(binaryBitmap)
 
             resultListener.invoke(result)
         } catch (e: Exception) {
-            binding.tv.text = "报错 ${e.stackTraceToString()}"
-            e.printStackTrace()
+            binding.tvFormat.text = ""
+            binding.tvColon.text = ""
+            binding.tv.text = ""
+            binding.et.setText("")
+            binding.iv.setImageBitmap(null)
+            binding.iv.tag = null
+
+            if (e is NotFoundException) {
+                binding.tv.text = "${getString(R.string.error)} ${getString(R.string.code_not_detected)}"
+            } else {
+                binding.tv.text = "${getString(R.string.error)} ${e.message}"
+                e.printStackTrace()
+            }
             resultListener.invoke(null)
         }
     }
@@ -231,7 +244,7 @@ class MainActivity : AppCompatActivity() {
                 val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
 
                 val reader = MultiFormatReader()
-//            val reader = QRCodeReader()
+
                 try {
                     result = reader.decode(binaryBitmap)
                 } catch (e: NotFoundException) {
@@ -271,7 +284,7 @@ class MainActivity : AppCompatActivity() {
         val dir = File(publicDirectory, packageName)
         if (dir.exists().not() && dir.mkdirs().not()) {
             Log.d("TAG", "saveBitmapToJpeg: mkdirs failed")
-            Toast.makeText(context, "目录创建失败", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.directory_creation_failed), Toast.LENGTH_SHORT).show()
             return
         }
         val dateFormat = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault())
@@ -281,11 +294,15 @@ class MainActivity : AppCompatActivity() {
             FileOutputStream(filePath).use { outputStream ->
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
                 Log.d("TAG", "saveBitmapToJpeg: filePath = ${filePath.absolutePath}")
-                Toast.makeText(context, "图片已保存: ${filePath.absolutePath}", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    context,
+                    "${getString(R.string.image_saved)}: ${filePath.absolutePath}",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         } catch (e: IOException) {
             e.printStackTrace()
-            Toast.makeText(context, "保存失败", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.save_failed), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -306,14 +323,18 @@ class MainActivity : AppCompatActivity() {
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
                         Log.d("TAG", "saveBitmapToPublicGallery: uri = $uri")
                         Log.d("TAG", "saveBitmapToPublicGallery: filePath = ${file.absolutePath}")
-                        Toast.makeText(context, "图片已保存: ${file.absolutePath}", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            context,
+                            "${getString(R.string.image_saved)}: ${file.absolutePath}",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 }
             } ?: {
-                Toast.makeText(context, "保存失败", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, getString(R.string.save_failed), Toast.LENGTH_SHORT).show()
             }
         } else {
-            // 处理 Android 10 及以下版本的情况
+            // 处理 Android 10 以下版本的情况
             // 这里可以使用旧的方法直接写入外部存储，需要权限 WRITE_EXTERNAL_STORAGE
             PermissionX.init(this)
                 .permissions(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)

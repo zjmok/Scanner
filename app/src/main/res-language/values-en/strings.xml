@@ -1,0 +1,32 @@
+<!-- 英语 (en) -->
+<resources>
+    <string name="app_name">Scanner</string>
+    <string name="code_type">Code Type</string>
+    <string name="clear">Clear</string>
+    <string name="scan_prompt">Please scan QR code or barcode</string>
+    <string name="scan">Scan</string>
+    <string name="select_image">Select Image</string>
+    <string name="copy_result">Copy scan result</string>
+    <string name="edit_box">Edit box</string>
+    <string name="generate_qr">Generate QR from text</string>
+    <string name="copy_text">Copy edit box content</string>
+
+    <string name="cancel_scan">Cancel scanning</string>
+    <string name="cancel_image_selection">Cancel image selection</string>
+    <string name="parse_error">Parse error</string>
+    <string name="error_occurred">Error occurred</string>
+    <string name="no_content">No content</string>
+    <string name="copy_success">Copy successful</string>
+    <string name="confirmation_prompt">Confirmation</string>
+    <string name="save_image_prompt">Do you want to save the image?</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_content_warning">Clear recognized content? This operation cannot be undone.</string>
+    <string name="error">Error</string>
+    <string name="code_not_detected">No barcode or QR code detected</string>
+    <string name="directory_creation_failed">Failed to create directory</string>
+    <string name="image_saved">Image saved</string>
+    <string name="save_failed">Save failed</string>
+
+    <string name="press_to_exit">Press %1$d more times to exit</string>
+</resources>

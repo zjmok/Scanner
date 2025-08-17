@@ -1,0 +1,32 @@
+<!-- 俄语 (ru) -->
+<resources>
+    <string name="app_name">Сканер</string>
+    <string name="code_type">Тип кода</string>
+    <string name="clear">Очистить</string>
+    <string name="scan_prompt">Отсканируйте QR-код или штрих-код</string>
+    <string name="scan">Сканировать</string>
+    <string name="select_image">Выбрать изображение</string>
+    <string name="copy_result">Копировать результат</string>
+    <string name="edit_box">Поле ввода</string>
+    <string name="generate_qr">Создать QR-код из текста</string>
+    <string name="copy_text">Копировать текст</string>
+
+    <string name="cancel_scan">Отменить сканирование</string>
+    <string name="cancel_image_selection">Отменить выбор</string>
+    <string name="parse_error">Ошибка разбора</string>
+    <string name="error_occurred">Произошла ошибка</string>
+    <string name="no_content">Нет содержимого</string>
+    <string name="copy_success">Скопировано</string>
+    <string name="confirmation_prompt">Подтверждение</string>
+    <string name="save_image_prompt">Сохранить изображение?</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="cancel">Отменить</string>
+    <string name="clear_content_warning">Очистить распознанный текст? Это действие нельзя отменить.</string>
+    <string name="error">Ошибка</string>
+    <string name="code_not_detected">Штрих-код или QR-код не обнаружен</string>
+    <string name="directory_creation_failed">Не удалось создать папку</string>
+    <string name="image_saved">Изображение сохранено</string>
+    <string name="save_failed">Ошибка сохранения</string>
+
+    <string name="press_to_exit">Нажмите еще %1$d раз(а) для выхода</string>
+</resources>

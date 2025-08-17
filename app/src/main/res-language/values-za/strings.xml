@@ -1,0 +1,32 @@
+<!-- 壮语 (za) -->
+<resources>
+    <string name="app_name">Scanner</string>
+    <string name="code_type">Codengh yiengh</string>
+    <string name="clear">Cawq</string>
+    <string name="scan_prompt">Ciengx QR code roxnaeuz barcode</string>
+    <string name="scan">Ciengx</string>
+    <string name="select_image">Cih duh</string>
+    <string name="copy_result">Ciemq ciengx ndaej</string>
+    <string name="edit_box">Gaiq box</string>
+    <string name="generate_qr">Caux QR code</string>
+    <string name="copy_text">Ciemq saw bienq</string>
+
+    <string name="cancel_scan">Cawq ciengx</string>
+    <string name="cancel_image_selection">Cawq cih duh</string>
+    <string name="parse_error">Gej ndaej loek</string>
+    <string name="error_occurred">Miz loek</string>
+    <string name="no_content">Ndaek saw mbouj miz</string>
+    <string name="copy_success">Ciemq ndaej</string>
+    <string name="confirmation_prompt">Dingh geiq</string>
+    <string name="save_image_prompt">Yaek cawq duh lwi?</string>
+    <string name="confirm">Dingh</string>
+    <string name="cancel">Cawq</string>
+    <string name="clear_content_warning">Yaek cawq saw roxnaeuz mbouj? Guh baenz neix mbouj dauq ndaej.</string>
+    <string name="error">Loek</string>
+    <string name="code_not_detected">Mbawj barcode roxnaeuz QR code ndaej</string>
+    <string name="directory_creation_failed">Guh ndaw mbouj baenz</string>
+    <string name="image_saved">Cawq duh ndaej</string>
+    <string name="save_failed">Cawq mbouj baenz</string>
+
+    <string name="press_to_exit">Ndaek aen %1$d baez daej ok</string>
+</resources>

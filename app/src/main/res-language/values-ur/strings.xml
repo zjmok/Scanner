@@ -1,0 +1,32 @@
+<!-- 乌尔都语 (ur) -->
+<resources>
+    <string name="app_name">سکینر</string>
+    <string name="code_type">کوڈ کی قسم</string>
+    <string name="clear">صاف کریں</string>
+    <string name="scan_prompt">براہ کرم QR کوڈ یا بارکوڈ اسکین کریں</string>
+    <string name="scan">اسکین</string>
+    <string name="select_image">تصویر منتخب کریں</string>
+    <string name="copy_result">نتیجہ کاپی کریں</string>
+    <string name="edit_box">ایڈٹ باکس</string>
+    <string name="generate_qr">متن سے QR کوڈ بنائیں</string>
+    <string name="copy_text">باکس کا مواد کاپی کریں</string>
+
+    <string name="cancel_scan">اسکین منسوخ کریں</string>
+    <string name="cancel_image_selection">تصویر کا انتخاب منسوخ کریں</string>
+    <string name="parse_error">پارسنگ خرابی</string>
+    <string name="error_occurred">خرابی واقع ہوئی</string>
+    <string name="no_content">کوئی مواد نہیں</string>
+    <string name="copy_success">کاپی کامیاب</string>
+    <string name="confirmation_prompt">تصدیقی پیغام</string>
+    <string name="save_image_prompt">کیا آپ تصویر محفوظ کرنا چاہتے ہیں؟</string>
+    <string name="confirm">تصدیق کریں</string>
+    <string name="cancel">منسوخ کریں</string>
+    <string name="clear_content_warning">کیا پہچانا گیا مواد صاف کریں؟ یہ عمل واپس نہیں ہو سکتا.</string>
+    <string name="error">خرابی</string>
+    <string name="code_not_detected">کوئی بارکوڈ یا QR کوڈ دریافت نہیں ہوا</string>
+    <string name="directory_creation_failed">ڈائریکٹری بنانے میں ناکامی</string>
+    <string name="image_saved">تصویر محفوظ ہو گئی</string>
+    <string name="save_failed">محفوظ کرنے میں ناکامی</string>
+
+    <string name="press_to_exit">خروج کے لیے مزید %1$d بار دبائیں</string>
+</resources>
