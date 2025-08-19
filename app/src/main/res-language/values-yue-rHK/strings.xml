@@ -1,0 +1,32 @@
+<!-- 繁体粤语-香港 (yue) -->
+<resources>
+    <string name="app_name">掃描器</string>
+    <string name="code_type">碼類型</string>
+    <string name="clear">清除</string>
+    <string name="scan_prompt">請掃描二維碼或條碼</string>
+    <string name="scan">掃描</string>
+    <string name="select_image">選圖</string>
+    <string name="copy_result">複製掃描結果</string>
+    <string name="edit_box">編輯框</string>
+    <string name="generate_qr">生成二維碼</string>
+    <string name="copy_text">複製編輯框內容</string>
+
+    <string name="cancel_scan">取消掃描</string>
+    <string name="cancel_image_selection">取消選圖</string>
+    <string name="parse_error">解析出錯</string>
+    <string name="error_occurred">出現錯誤</string>
+    <string name="no_content">暫無內容</string>
+    <string name="copy_success">複製成功</string>
+    <string name="confirmation_prompt">確認提示</string>
+    <string name="save_image_prompt">是否需要保存圖片？</string>
+    <string name="confirm">確定</string>
+    <string name="cancel">取消</string>
+    <string name="clear_content_warning">是否清空識別內容？此操作不可逆。</string>
+    <string name="error">錯誤</string>
+    <string name="code_not_detected">未識別到條碼或二維碼</string>
+    <string name="directory_creation_failed">目錄創建失敗</string>
+    <string name="image_saved">圖片已保存</string>
+    <string name="save_failed">保存失敗</string>
+
+    <string name="press_to_exit">快速再撳 %1$d 次 退出程式</string>
+</resources>

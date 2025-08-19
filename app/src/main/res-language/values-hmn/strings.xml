@@ -1,0 +1,32 @@
+<!-- 苗语 (hmn) -->
+<resources>
+    <string name="app_name">Scanner</string>
+    <string name="code_type">Code hom</string>
+    <string name="clear">Clear</string>
+    <string name="scan_prompt">Scan QR code los sis barcode</string>
+    <string name="scan">Scan</string>
+    <string name="select_image">Xaiv duab</string>
+    <string name="copy_result">Copy scan cov ntaub ntawv</string>
+    <string name="edit_box">Edit box</string>
+    <string name="generate_qr">Generate QR code ntawm cov ntawv</string>
+    <string name="copy_text">Copy cov ntawv</string>
+
+    <string name="cancel_scan">Tso scan</string>
+    <string name="cancel_image_selection">Tso xaiv duab</string>
+    <string name="parse_error">Kev tshawb tsis tau</string>
+    <string name="error_occurred">Muaj qhov tsis raug</string>
+    <string name="no_content">Tsis muaj ntawv</string>
+    <string name="copy_success">Copy ua tiav</string>
+    <string name="confirmation_prompt">Kev teeb tsa</string>
+    <string name="save_image_prompt">Koj puas xav khaws duab?</string>
+    <string name="confirm">Pab</string>
+    <string name="cancel">Tso</string>
+    <string name="clear_content_warning">Koj puas xav tshem ntawv? Kev ua no tsis rov ua dua.</string>
+    <string name="error">Qhov tsis raug</string>
+    <string name="barcode_not_detected">Tsis pom barcode los sis QR code</string>
+    <string name="directory_creation_failed">Tsim chaw tsis tiav</string>
+    <string name="image_saved">Khaws duab tau</string>
+    <string name="save_failed">Khaws tsis tiav</string>
+
+    <string name="press_to_exit">Nyob %1$d zaug ntxiv mus tawm</string>
+</resources>
