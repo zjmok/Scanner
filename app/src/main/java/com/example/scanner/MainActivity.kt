@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
-    private val barcodeLauncher = registerForActivityResult(ScanContract()) { result ->
+    private val scanLauncher = registerForActivityResult(ScanContract()) { result ->
         if (result.contents == null) {
             Toast.makeText(this, getString(R.string.cancel_scan), Toast.LENGTH_SHORT).show()
         } else {
@@ -75,21 +75,25 @@ class MainActivity : AppCompatActivity() {
             } else if (result.resultCode == RESULT_OK) {
                 val intent = result.data
                 intent?.data?.let { uri ->
-                    decodeCode(uri) {
-                        if (it != null) {
-                            binding.tvFormat.text = "${it.barcodeFormat}"
-                            binding.tvColon.text = " : "
-                            binding.tv.text = it.text
-                            binding.et.setText(it.text)
-                        } else {
-                            Toast.makeText(this, getString(R.string.parse_error), Toast.LENGTH_SHORT).show()
-                        }
-                    }
+                    parseFromUri(uri)
                 } ?: {
                     Toast.makeText(this, getString(R.string.error_occurred), Toast.LENGTH_SHORT).show()
                 }
             }
         }
+
+    private fun parseFromUri(uri: Uri) {
+        decodeCode(uri) {
+            if (it == null) {
+                Toast.makeText(this, getString(R.string.parse_error), Toast.LENGTH_SHORT).show()
+            } else {
+                binding.tvFormat.text = "${it.barcodeFormat}"
+                binding.tvColon.text = " : "
+                binding.tv.text = it.text
+                binding.et.setText(it.text)
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,7 +106,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnScan.setOnClickListener {
-            barcodeLauncher.launch(ScanOptions().apply {
+            scanLauncher.launch(ScanOptions().apply {
                 setOrientationLocked(false)
                 setBeepEnabled(false)
             })
@@ -190,6 +194,25 @@ class MainActivity : AppCompatActivity() {
                 })
             }
         })
+
+        setSendingIntent()
+    }
+
+    private fun setSendingIntent() {
+        // 检查 Intent 类型和数据
+        if (intent?.action == Intent.ACTION_SEND && intent.type?.startsWith("image/") == true) {
+
+            val imageUri: Uri? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                intent.getParcelableExtra(Intent.EXTRA_STREAM, Uri::class.java)
+            } else {
+                @Suppress("DEPRECATION")
+                intent.getParcelableExtra(Intent.EXTRA_STREAM)
+            }
+
+            imageUri?.let { uri ->
+                parseFromUri(uri)
+            }
+        }
     }
 
     @SuppressLint("SetTextI18n")

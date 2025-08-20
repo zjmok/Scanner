@@ -1,8 +1,29 @@
+import java.io.ByteArrayOutputStream
 import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+}
+
+val gitCommitCount = "git rev-list --count HEAD".runCommand()?.toIntOrNull() ?: 0
+val gitCommitId = "git rev-parse --short HEAD".runCommand() ?: "v0.0.0"
+val gitTag = "git tag --points-at HEAD".runCommand()?.split("\n")
+val gitLastTag = "git describe --tags --always".runCommand()?.split("-")?.first() ?: "v0.0.0"
+
+fun String.runCommand(): String? {
+    return try {
+        ByteArrayOutputStream().also {
+            exec {
+                commandLine = this@runCommand.split(" ")
+                standardOutput = it
+            }
+        }.toString().trim()
+    } catch (ignore: Exception) {
+//        throw GradleException("命令: $this\n执行失败")
+        println("命令: $this\n执行失败")
+        null
+    }
 }
 
 fun getLocalProperty(key: String): String {
@@ -31,8 +52,8 @@ android {
         applicationId = "com.example.scanner"
         minSdk = 21
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = gitCommitCount
+        versionName = gitLastTag
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

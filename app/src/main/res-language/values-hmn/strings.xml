@@ -23,7 +23,7 @@
     <string name="cancel">Tso</string>
     <string name="clear_content_warning">Koj puas xav tshem ntawv? Kev ua no tsis rov ua dua.</string>
     <string name="error">Qhov tsis raug</string>
-    <string name="barcode_not_detected">Tsis pom barcode los sis QR code</string>
+    <string name="code_not_detected">Tsis pom barcode los sis QR code</string>
     <string name="directory_creation_failed">Tsim chaw tsis tiav</string>
     <string name="image_saved">Khaws duab tau</string>
     <string name="save_failed">Khaws tsis tiav</string>

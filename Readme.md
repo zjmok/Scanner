@@ -1,13 +1,14 @@
 
-### 实现了扫码（包含选图识别）和生成二维码
+# Scanner
 
-```
-// https://github.com/journeyapps/zxing-android-embedded
-implementation("com.journeyapps:zxing-android-embedded:4.3.0") { isTransitive = false }
-// https://github.com/zxing/zxing/releases
-implementation("com.google.zxing:core:3.5.3")
-```
+下载 [release](https://github.com/zjmok/Scanner/releases)
 
-### 在公有目录写入文件，适配了 Android 10+ 的 MediaStore 
+---
 
-将 bitmap 保存为图片 jpeg
+## 主要功能
+
+- [x] 识别条码二维码（拍照 + 选图）
+- [x] 生成二维码
+- [x] 复制识别内容
+- [x] 保存二维码图片
+- [x] 图片分享到 APP 识别
