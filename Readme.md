@@ -1,9 +1,21 @@
 
 # Scanner
 
-下载 [release](https://github.com/zjmok/Scanner/releases)
+[Download](https://github.com/zjmok/Scanner/releases)
+
+## Main Features
+
+- [x] Recognize barcodes & QR codes (Camera + Gallery)
+- [x] Generate QR codes
+- [x] Copy recognized content
+- [x] Save QR code images
+- [x] Share images to the app for recognition
 
 ---
+
+# 扫描器
+
+[下载](https://github.com/zjmok/Scanner/releases)
 
 ## 主要功能
 
